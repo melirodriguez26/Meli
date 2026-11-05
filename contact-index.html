@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Melissa Rodríguez - Contact</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Paleta de colores del portafolio -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azulOscuro: '#1C3D5A',
+                        azulMedio: '#4A79A9',
+                        azulClaro: '#BDCEDD',
+                        fondoClaro: '#F2F4F7'
+                    },
+                    keyframes: {
+                        pulseSlow: {
+                            '0%, 100%': { opacity: '0.2' },
+                            '50%': { opacity: '0.4' },
+                        }
+                    },
+                    animation: {
+                        pulseSlow: 'pulseSlow 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen flex flex-col justify-between bg-gradient-to-br from-azulOscuro via-[#102B43] to-azulOscuro">
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <div class="logo transition-transform duration-300 hover:scale-105">
+            Melissa Rodríguez
+        </div>
+
+        <!-- NAVEGACIÓN PRINCIPAL -->
+        <nav aria-label="Navegación principal" class="navegacion">
+            <a href="About-me-index.html" class="transition-all duration-300 hover:-translate-y-0.5">About me</a>
+            <a href="Projects-index.html" class="transition-all duration-300 hover:-translate-y-0.5">Projects</a>
+            <a href="C&R-index.html" class="transition-all duration-300 hover:-translate-y-0.5">Recognitions &amp; Certificates</a>
+            <a href="contact-index.html" class="activo transition-all duration-300">Contact</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal mx-auto my-auto py-10 w-full max-w-4xl px-4">
+
+        <!-- PRESENTACIÓN -->
+        <section class="presentacion text-center mb-8 transition-transform duration-700 hover:scale-[1.01]">
+            <h1 class="subtitulo-saludo">
+                Hi, I'm Melissa Rodríguez
+            </h1>
+
+            <h2 class="titulo-seccion">
+                Contact me!
+            </h2>
+
+            <p class="descripcion-contacto text-azulClaro max-w-xl mx-auto mt-2">
+                If you would like to get in touch with me, feel free to send me a message
+                through the form below.
+            </p>
+        </section>
+
+        <!-- TARJETA DE CONTACTO CON ANIMACIONES Y DINAMISMO -->
+        <section class="tarjeta-contacto bg-white rounded-3xl shadow-2xl p-8 sm:p-10 border border-white/50 transition-all duration-500 hover:shadow-[0_25px_60px_-15px_rgba(28,61,90,0.3)] hover:-translate-y-1">
+
+            <form
+                class="formulario-contacto flex flex-col gap-5"
+                onsubmit="event.preventDefault();alert('Thanks for your message! This demo form is not connected to an email service yet.');"
+            >
+
+                <!-- CAMPO: NOMBRE -->
+                <div class="grupo-campo flex flex-col gap-2 transition-transform duration-300 hover:translate-x-1">
+                    <label for="name" class="text-azulOscuro font-semibold text-sm">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your full name"
+                        autocomplete="name"
+                        required
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-fondoClaro text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-azulMedio focus:bg-white focus:shadow-md transition-all duration-300"
+                    >
+                </div>
+
+                <!-- CAMPO: CORREO ELECTRÓNICO -->
+                <div class="grupo-campo flex flex-col gap-2 transition-transform duration-300 hover:translate-x-1">
+                    <label for="email" class="text-azulOscuro font-semibold text-sm">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="your.email@example.com"
+                        autocomplete="email"
+                        required
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-fondoClaro text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-azulMedio focus:bg-white focus:shadow-md transition-all duration-300"
+                    >
+                </div>
+
+                <!-- CAMPO: MENSAJE -->
+                <div class="grupo-campo flex flex-col gap-2 transition-transform duration-300 hover:translate-x-1">
+                    <label for="message" class="text-azulOscuro font-semibold text-sm">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Write your message here..."
+                        required
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-fondoClaro text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-azulMedio focus:bg-white focus:shadow-md transition-all duration-300 resize-y"
+                    ></textarea>
+                </div>
+
+                <!-- BOTÓN DE ENVÍO CON EFECTO INTERACTIVO -->
+                <button type="submit" class="btn-enviar group self-start bg-azulOscuro hover:bg-azulMedio text-white font-semibold py-3 px-7 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-azulMedio/40 flex items-center gap-2 mt-2">
+                    Send Message <span class="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+        <h3>My contact info:</h3>
+
+        <div class="redes-sociales">
+            <div class="red-item transition-all duration-300 hover:-translate-y-1">@abril_riv36</div>
+            <div class="red-item transition-all duration-300 hover:-translate-y-1">6960-5438</div>
+            <div class="red-item transition-all duration-300 hover:-translate-y-1">br985716@gmail.com</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

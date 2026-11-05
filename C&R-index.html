@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Melissa Rodríguez - Certificates</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Paleta de colores del portafolio -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azulOscuro: '#1C3D5A',
+                        azulMedio: '#4A79A9',
+                        azulClaro: '#BDCEDD',
+                        fondoClaro: '#F2F4F7'
+                    },
+                    keyframes: {
+                        pulseSlow: {
+                            '0%, 100%': { opacity: '0.2' },
+                            '50%': { opacity: '0.4' },
+                        }
+                    },
+                    animation: {
+                        pulseSlow: 'pulseSlow 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen flex flex-col justify-between bg-gradient-to-br from-azulOscuro via-[#102B43] to-azulOscuro">
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <div class="logo transition-transform duration-300 hover:scale-105">
+            Melissa Rodríguez
+        </div>
+
+        <!-- NAVEGACIÓN PRINCIPAL -->
+        <nav aria-label="Navegación principal" class="navegacion">
+            <a href="About-me-index.html" class="transition-all duration-300 hover:-translate-y-0.5">About me</a>
+            <a href="Projects-index.html" class="transition-all duration-300 hover:-translate-y-0.5">Projects</a>
+            <a href="C&R-index.html" class="activo transition-all duration-300">Recognitions &amp; Certificates</a>
+            <a href="contact-index.html" class="transition-all duration-300 hover:-translate-y-0.5">Contact</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal mx-auto my-auto py-10 w-full max-w-6xl px-4">
+
+        <!-- PRESENTACIÓN -->
+        <section class="presentacion text-center mb-10 transition-transform duration-700 hover:scale-[1.01]">
+            <h1 class="subtitulo-saludo">
+                Hi, I'm Melissa Rodríguez
+            </h1>
+
+            <h2 class="titulo-seccion">
+                Recognitions &amp; Certificates
+            </h2>
+
+            <p class="descripcion-certificados text-azulClaro max-w-2xl mx-auto mt-2">
+                Some of the most important certificates and recognitions I have earned
+                throughout my academic and personal journey.
+            </p>
+        </section>
+
+        <!-- GALERÍA DE CERTIFICADOS CON MOVIMIENTO Y TRANSICIONES -->
+        <section
+            class="grid-certificados grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            aria-label="Certificates gallery"
+        >
+
+            <!-- CERTIFICADO 01 -->
+            <article class="certificado rounded-2xl overflow-hidden shadow-2xl bg-white relative aspect-[4/3] group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <div class="certificado-imagen w-full h-full overflow-hidden relative">
+                    <img
+                        src="certificado 1.jpeg"
+                        alt="Certificate 1"
+                        loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+                    <div class="certificado-overlay absolute inset-0 bg-gradient-to-t from-azulOscuro/95 via-azulOscuro/40 to-transparent flex items-end justify-center p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <span class="text-white font-semibold text-sm tracking-wide bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20">Certificate 01</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CERTIFICADO 02 -->
+            <article class="certificado rounded-2xl overflow-hidden shadow-2xl bg-white relative aspect-[4/3] group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <div class="certificado-imagen w-full h-full overflow-hidden relative">
+                    <img
+                        src="certificado 2.jpeg"
+                        alt="Certificate 2"
+                        loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+                    <div class="certificado-overlay absolute inset-0 bg-gradient-to-t from-azulOscuro/95 via-azulOscuro/40 to-transparent flex items-end justify-center p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <span class="text-white font-semibold text-sm tracking-wide bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20">Certificate 02</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CERTIFICADO 03 -->
+            <article class="certificado rounded-2xl overflow-hidden shadow-2xl bg-white relative aspect-[4/3] group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <div class="certificado-imagen w-full h-full overflow-hidden relative">
+                    <img
+                        src="certificado 3.jpeg"
+                        alt="Certificate 3"
+                        loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+                    <div class="certificado-overlay absolute inset-0 bg-gradient-to-t from-azulOscuro/95 via-azulOscuro/40 to-transparent flex items-end justify-center p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <span class="text-white font-semibold text-sm tracking-wide bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20">Certificate 03</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CERTIFICADO 04 -->
+            <article class="certificado rounded-2xl overflow-hidden shadow-2xl bg-white relative aspect-[4/3] group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <div class="certificado-imagen w-full h-full overflow-hidden relative">
+                    <img
+                        src="certificado 4.jpeg"
+                        alt="Certificate 4"
+                        loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+                    <div class="certificado-overlay absolute inset-0 bg-gradient-to-t from-azulOscuro/95 via-azulOscuro/40 to-transparent flex items-end justify-center p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <span class="text-white font-semibold text-sm tracking-wide bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20">Certificate 04</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CERTIFICADO 05 -->
+            <article class="certificado rounded-2xl overflow-hidden shadow-2xl bg-white relative aspect-[4/3] group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <div class="certificado-imagen w-full h-full overflow-hidden relative">
+                    <img
+                        src="certificado 5.jpeg"
+                        alt="Certificate 5"
+                        loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+                    <div class="certificado-overlay absolute inset-0 bg-gradient-to-t from-azulOscuro/95 via-azulOscuro/40 to-transparent flex items-end justify-center p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <span class="text-white font-semibold text-sm tracking-wide bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20">Certificate 05</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CERTIFICADO 06 -->
+            <article class="certificado rounded-2xl overflow-hidden shadow-2xl bg-white relative aspect-[4/3] group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <div class="certificado-imagen w-full h-full overflow-hidden relative">
+                    <img
+                        src="certificado 6.jpeg"
+                        alt="Certificate 6"
+                        loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+                    <div class="certificado-overlay absolute inset-0 bg-gradient-to-t from-azulOscuro/95 via-azulOscuro/40 to-transparent flex items-end justify-center p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <span class="text-white font-semibold text-sm tracking-wide bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20">Certificate 06</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CERTIFICADO 07 -->
+            <article class="certificado rounded-2xl overflow-hidden shadow-2xl bg-white relative aspect-[4/3] group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                <div class="certificado-imagen w-full h-full overflow-hidden relative">
+                    <img
+                        src="certificado 7.jpeg"
+                        alt="Certificate 7"
+                        loading="lazy"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+                    <div class="certificado-overlay absolute inset-0 bg-gradient-to-t from-azulOscuro/95 via-azulOscuro/40 to-transparent flex items-end justify-center p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <span class="text-white font-semibold text-sm tracking-wide bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20">Certificate 07</span>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+        <h3>My contact info:</h3>
+
+        <div class="redes-sociales">
+            <div class="red-item transition-all duration-300 hover:-translate-y-1">@abril_riv36</div>
+            <div class="red-item transition-all duration-300 hover:-translate-y-1">6960-5438</div>
+            <div class="red-item transition-all duration-300 hover:-translate-y-1">br985716@gmail.com</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

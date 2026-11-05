@@ -1,0 +1,810 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #1C3D5A;
+    --color-secondary: #4A79A9;
+    --color-accent: #BDCEDD;
+    --color-bg: #F2F4F7;
+    --color-card-bg: #FFFFFF;
+    --color-text: #222222;
+    --color-text-light: #555555;
+    --color-white: #FFFFFF;
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.18);
+    --transicion: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+
+    color: var(--color-white);
+    background: linear-gradient(
+        135deg,
+        #102B43 0%,
+        var(--color-primary) 50%,
+        #244F73 100%
+    );
+    background-size: 200% 200%;
+    animation: fondoEnMovimiento 15s ease infinite;
+    line-height: 1.6;
+}
+
+/* Formas luminosas que se mueven detrás del contenido */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.20;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::before {
+    background: #4A79A9;
+    top: 10%;
+    left: -120px;
+    animation: moverLuz 12s ease-in-out infinite alternate;
+}
+
+body::after {
+    background: #BDCEDD;
+    right: -140px;
+    bottom: 5%;
+    animation: moverLuz 15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes fondoEnMovimiento {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes moverLuz {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+    to {
+        transform: translate(60px, -50px) scale(1.15);
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+/* 2. ENCABEZADO Y NAVEGACIÓN */
+.encabezado {
+    width: 100%;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    background: rgba(12, 32, 50, 0.78);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(12px);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--color-white);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: var(--transicion);
+}
+
+.logo:hover {
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.navegacion a {
+    display: inline-block;
+    padding: 9px 14px;
+    border-radius: 10px;
+
+    color: #E5EDF5;
+    font-size: 0.88rem;
+    font-weight: 500;
+
+    transition: var(--transicion);
+}
+
+.navegacion a:hover {
+    background: rgba(189, 206, 221, 0.16);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+.navegacion a.activo {
+    color: var(--color-primary);
+    background: var(--color-accent);
+    font-weight: 600;
+}
+
+/* 3. CONTENIDO PRINCIPAL */
+.contenedor-principal {
+    width: min(1100px, 88%);
+    margin: 0 auto;
+    padding: 55px 0;
+    flex: 1;
+}
+
+.presentacion {
+    text-align: center;
+    margin-bottom: 35px;
+    animation: aparecer 0.8s ease both;
+}
+
+.subtitulo-saludo {
+    color: var(--color-white);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.20);
+}
+
+.titulo-seccion {
+    display: inline-block;
+    position: relative;
+    color: var(--color-accent);
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    font-weight: 600;
+    margin: 8px 0 15px;
+    padding-bottom: 10px;
+}
+
+.titulo-seccion::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 55%;
+    height: 3px;
+    border-radius: 5px;
+    background: var(--color-secondary);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.presentacion:hover .titulo-seccion::after {
+    width: 85%;
+}
+
+.descripcion-proyectos,
+.descripcion-certificados,
+.descripcion-contacto {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #E0E9F2;
+    font-size: 0.98rem;
+}
+
+/* Animación de entrada */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 4. TARJETA DE ABOUT ME */
+.tarjeta-sobre-mi {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    align-items: center;
+    gap: 35px;
+
+    padding: 35px;
+    border-radius: 22px;
+    background: var(--color-card-bg);
+    color: var(--color-text);
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    animation: aparecer 0.9s ease both;
+    transition: var(--transicion);
+}
+
+.tarjeta-sobre-mi:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.columna-texto h2,
+.columna-texto h3 {
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.columna-texto p {
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #E7EEF5;
+    color: var(--color-primary);
+    padding: 7px 13px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.lista-habilidades {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.lista-habilidades li {
+    background: var(--color-bg);
+    color: var(--color-primary);
+    border: 1px solid #D8E1EA;
+    padding: 8px 12px;
+    border-radius: 9px;
+    font-size: 0.85rem;
+    transition: var(--transicion);
+}
+
+.lista-habilidades li:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+.columna-foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.marco-foto {
+    width: min(100%, 300px);
+    aspect-ratio: 4 / 5;
+    padding: 9px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        var(--color-secondary),
+        var(--color-accent)
+    );
+    box-shadow: 0 10px 25px rgba(28, 61, 90, 0.22);
+    transition: var(--transicion);
+}
+
+.marco-foto:hover {
+    transform: rotate(1deg) scale(1.025);
+}
+
+.marco-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 14px;
+}
+
+.texto-foto {
+    margin-top: 13px;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+/* 5. PROYECTOS: TARJETAS GIRATORIAS */
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.flip-card {
+    min-width: 0;
+    height: 380px;
+    perspective: 1000px;
+    cursor: pointer;
+    outline: none;
+    animation: aparecer 0.7s ease both;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-shadow: var(--sombra);
+}
+
+.flip-card-front {
+    background: var(--color-card-bg);
+    color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.flip-card:hover .flip-card-front img {
+    transform: scale(1.05);
+}
+
+.numero-proyecto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-primary);
+    background: var(--color-bg);
+    font-weight: 600;
+}
+
+.flip-card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+
+    background: linear-gradient(
+        145deg,
+        var(--color-primary),
+        var(--color-secondary)
+    );
+    color: var(--color-white);
+    text-align: left;
+
+    transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.ver-mas {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    color: var(--color-white);
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: var(--transicion);
+    text-align: center;
+}
+
+.ver-mas:hover {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
+.flip-card:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 5px;
+    border-radius: 18px;
+}
+
+/* 6. RECONOCIMIENTOS Y CERTIFICADOS */
+.grid-certificados {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.certificado {
+    position: relative;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 17px;
+    background: #FFFFFF;
+    box-shadow: var(--sombra);
+    cursor: pointer;
+    animation: aparecer 0.7s ease both;
+    transition: var(--transicion);
+}
+
+.certificado:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.27);
+}
+
+.certificado-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.certificado:hover .certificado-imagen {
+    transform: scale(1.07);
+}
+
+.certificado-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 20px;
+
+    background: linear-gradient(
+        to top,
+        rgba(12, 32, 50, 0.92),
+        rgba(12, 32, 50, 0.05) 75%
+    );
+
+    color: var(--color-white);
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.certificado:hover .certificado-overlay {
+    opacity: 1;
+}
+
+/* Mantiene visible el nombre en pantallas táctiles */
+@media (hover: none) {
+    .certificado-overlay {
+        opacity: 1;
+    }
+}
+
+/* 7. FORMULARIO DE CONTACTO */
+.tarjeta-contacto {
+    width: min(100%, 720px);
+    margin: 0 auto;
+    padding: 35px;
+
+    color: var(--color-text);
+    background: var(--color-card-bg);
+    border-radius: 22px;
+    box-shadow: var(--sombra);
+
+    animation: aparecer 0.8s ease both;
+    transition: var(--transicion);
+}
+
+.tarjeta-contacto:hover {
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-campo label {
+    color: var(--color-primary);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.grupo-campo input,
+.grupo-campo textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #D3DDE7;
+    border-radius: 10px;
+    outline: none;
+
+    background: #F9FAFC;
+    color: var(--color-text);
+    font-size: 0.94rem;
+
+    transition: var(--transicion);
+}
+
+.grupo-campo input::placeholder,
+.grupo-campo textarea::placeholder {
+    color: #8A96A3;
+}
+
+.grupo-campo input:focus,
+.grupo-campo textarea:focus {
+    border-color: var(--color-secondary);
+    background: var(--color-white);
+    box-shadow: 0 0 0 4px rgba(74, 121, 169, 0.14);
+}
+
+.grupo-campo textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.btn-enviar {
+    align-self: flex-start;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(28, 61, 90, 0.2);
+    transition: var(--transicion);
+}
+
+.btn-enviar:hover {
+    background: var(--color-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 9px 20px rgba(28, 61, 90, 0.27);
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+}
+
+.btn-enviar:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 4px;
+}
+
+/* 8. PIE DE PÁGINA */
+.pie-pagina {
+    width: 100%;
+    padding: 24px 7%;
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    background: rgba(12, 32, 50, 0.75);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #E0E9F2;
+    text-align: center;
+    font-size: 0.88rem;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.red-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 12px;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--color-white);
+    transition: var(--transicion);
+}
+
+.red-item:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+/* 9. DISEÑO PARA TABLETS */
+@media (max-width: 900px) {
+    .encabezado {
+        padding: 16px 5%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navegacion {
+        gap: 5px;
+    }
+
+    .contenedor-principal {
+        width: 90%;
+        padding: 40px 0;
+    }
+
+    .tarjeta-sobre-mi {
+        grid-template-columns: 1fr;
+        padding: 28px;
+    }
+
+    .columna-foto {
+        grid-row: 1;
+    }
+
+    .marco-foto {
+        width: min(65%, 260px);
+    }
+
+    .grid-tarjetas,
+    .grid-certificados {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .flip-card {
+        height: 380px;
+    }
+}
+
+/* 10. DISEÑO PARA CELULARES */
+@media (max-width: 560px) {
+    .encabezado {
+        position: relative;
+        padding: 18px 5%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .navegacion {
+        width: 100%;
+        gap: 6px;
+    }
+
+    .navegacion a {
+        padding: 8px 10px;
+        font-size: 0.78rem;
+    }
+
+    .contenedor-principal {
+        width: 91%;
+        padding: 32px 0;
+    }
+
+    .presentacion {
+        margin-bottom: 25px;
+    }
+
+    .subtitulo-saludo {
+        font-size: 1.8rem;
+    }
+
+    .titulo-seccion {
+        font-size: 1.4rem;
+    }
+
+    .descripcion-proyectos,
+    .descripcion-certificados,
+    .descripcion-contacto {
+        font-size: 0.9rem;
+    }
+
+    .tarjeta-sobre-mi,
+    .tarjeta-contacto {
+        padding: 22px;
+        border-radius: 17px;
+    }
+
+    .marco-foto {
+        width: min(80%, 240px);
+    }
+
+    .grid-tarjetas,
+    .grid-certificados {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .flip-card {
+        height: 380px;
+    }
+
+    .certificado {
+        aspect-ratio: 4 / 3;
+    }
+
+    .certificado-overlay {
+        opacity: 1;
+    }
+
+    .btn-enviar {
+        width: 100%;
+    }
+
+    .pie-pagina {
+        padding: 22px 5%;
+        flex-direction: column;
+    }
+}
+
+/* 11. ACCESIBILIDAD: REDUCIR ANIMACIONES */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

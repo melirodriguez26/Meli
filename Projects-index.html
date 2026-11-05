@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Melissa Rodríguez - Projects</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Paleta de colores del portafolio -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azulOscuro: '#1C3D5A',
+                        azulMedio: '#4A79A9',
+                        azulClaro: '#BDCEDD',
+                        fondoClaro: '#F2F4F7'
+                    },
+                    keyframes: {
+                        pulseSlow: {
+                            '0%, 100%': { opacity: '0.2' },
+                            '50%': { opacity: '0.4' },
+                        }
+                    },
+                    animation: {
+                        pulseSlow: 'pulseSlow 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen flex flex-col justify-between bg-gradient-to-br from-azulOscuro via-[#102B43] to-azulOscuro">
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <div class="logo transition-transform duration-300 hover:scale-105">
+            Melissa Rodríguez
+        </div>
+
+        <!-- NAVEGACIÓN -->
+        <nav aria-label="Navegación principal" class="navegacion">
+            <a href="About-me-index.html" class="transition-all duration-300 hover:-translate-y-0.5">About me</a>
+            <a href="Projects-index.html" class="activo transition-all duration-300">Projects</a>
+            <a href="C&R-index.html" class="transition-all duration-300 hover:-translate-y-0.5">Recognitions &amp; Certificates</a>
+            <a href="contact-index.html" class="transition-all duration-300 hover:-translate-y-0.5">Contact</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal mx-auto my-auto py-10 w-full max-w-6xl px-4">
+
+        <!-- PRESENTACIÓN -->
+        <section class="presentacion text-center mb-10 transition-transform duration-700 hover:scale-[1.01]">
+            <h1 class="subtitulo-saludo">
+                Hi, I'm Melissa Rodríguez
+            </h1>
+
+            <h2 class="titulo-seccion">
+                My Projects
+            </h2>
+
+            <p class="descripcion-proyectos text-azulClaro max-w-2xl mx-auto mt-2">
+                Throughout my academic journey, I have participated in different projects that
+                allowed me to develop my creativity, leadership and teamwork skills.
+            </p>
+        </section>
+
+        <!-- TARJETAS DE PROYECTOS CON MOVIMIENTO Y TRANSICIONES -->
+        <section class="grid-tarjetas grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="My projects">
+
+            <!-- PROYECTO 01 -->
+            <article
+                class="flip-card rounded-2xl shadow-2xl overflow-hidden bg-white border border-white/40 h-[380px] transition-transform duration-300 hover:-translate-y-1"
+                tabindex="0"
+                role="button"
+                aria-pressed="false"
+                aria-label="Ver detalles del Proyecto Estudiantil"
+                onclick="toggleCard(this)"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}"
+            >
+                <div class="flip-card-inner relative w-full h-full">
+
+                    <!-- FRENTE -->
+                    <div class="flip-card-front bg-white flex flex-col justify-between h-full p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="numero-proyecto font-bold text-azulOscuro text-lg bg-fondoClaro px-3 py-1 rounded-lg shadow-sm">01</span>
+                            <span class="text-xs text-azulMedio font-semibold animate-pulse">Click to flip</span>
+                        </div>
+                        <div class="w-full h-44 rounded-xl overflow-hidden mb-3 relative group">
+                            <img src="proyecto 0.jpg" alt="Proyecto Estudiantil" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <p class="font-bold text-azulOscuro text-center text-base">Proyecto Estudiantil</p>
+                        <span class="ver-mas mt-2 text-xs font-semibold text-azulMedio text-center block transition-colors duration-300 hover:text-azulOscuro">Click →</span>
+                    </div>
+
+                    <!-- REVERSO -->
+                    <div class="flip-card-back bg-gradient-to-br from-azulOscuro to-azulMedio text-white p-6 flex flex-col justify-between h-full overflow-y-auto">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-azulClaro tracking-wide">Proyecto Estudiantil</h4>
+                            <p class="text-xs sm:text-sm leading-relaxed text-slate-100">
+                                This year, I had the opportunity to serve as president of my school. Together with the class
+                                committee, we carried out a project through various types of sales throughout the year. The
+                                goal was to purchase an air conditioner for the computer center that was being built at the
+                                school. We worked very well together, everyone gave their best, and we managed to complete
+                                the project successfully, gaining a meaningful experience in leadership and teamwork.
+                            </p>
+                        </div>
+                        <span class="ver-mas text-xs text-azulClaro hover:text-white mt-3 text-center transition-transform duration-300 hover:scale-105">Click →</span>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- PROYECTO 02 -->
+            <article
+                class="flip-card rounded-2xl shadow-2xl overflow-hidden bg-white border border-white/40 h-[380px] transition-transform duration-300 hover:-translate-y-1"
+                tabindex="0"
+                role="button"
+                aria-pressed="false"
+                aria-label="Ver detalles de Hackathon ImDress"
+                onclick="toggleCard(this)"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}"
+            >
+                <div class="flip-card-inner relative w-full h-full">
+
+                    <!-- FRENTE -->
+                    <div class="flip-card-front bg-white flex flex-col justify-between h-full p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="numero-proyecto font-bold text-azulOscuro text-lg bg-fondoClaro px-3 py-1 rounded-lg shadow-sm">02</span>
+                            <span class="text-xs text-azulMedio font-semibold animate-pulse">Click to flip</span>
+                        </div>
+                        <div class="w-full h-44 rounded-xl overflow-hidden mb-3 relative group">
+                            <img src="proyecto 1.png" alt="Hackathon (ImDress)" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <p class="font-bold text-azulOscuro text-center text-base">Hackathon (ImDress)</p>
+                        <span class="ver-mas mt-2 text-xs font-semibold text-azulMedio text-center block transition-colors duration-300 hover:text-azulOscuro">Click →</span>
+                    </div>
+
+                    <!-- REVERSO -->
+                    <div class="flip-card-back bg-gradient-to-br from-azulOscuro to-azulMedio text-white p-6 flex flex-col justify-between h-full overflow-y-auto">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-azulClaro tracking-wide">Hackathon (ImDress)</h4>
+                            <p class="text-xs sm:text-sm leading-relaxed text-slate-100">
+                                My first project at the center was Imdress, an app where people could rent or buy clothes
+                                depending on the occasion. My contribution involved designing the app’s screens and the
+                                visual presentation of each garment available to users.
+
+                                We worked as a team with the goal of helping people find the right outfit through an
+                                accessible and easy-to-use technological tool, marking the beginning of my experience in
+                                design and development projects.
+                            </p>
+                        </div>
+                        <span class="ver-mas text-xs text-azulClaro hover:text-white mt-3 text-center transition-transform duration-300 hover:scale-105">Click →</span>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- PROYECTO 03 -->
+            <article
+                class="flip-card rounded-2xl shadow-2xl overflow-hidden bg-white border border-white/40 h-[380px] transition-transform duration-300 hover:-translate-y-1"
+                tabindex="0"
+                role="button"
+                aria-pressed="false"
+                aria-label="Ver detalles de CREO"
+                onclick="toggleCard(this)"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}"
+            >
+                <div class="flip-card-inner relative w-full h-full">
+
+                    <!-- FRENTE -->
+                    <div class="flip-card-front bg-white flex flex-col justify-between h-full p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="numero-proyecto font-bold text-azulOscuro text-lg bg-fondoClaro px-3 py-1 rounded-lg shadow-sm">03</span>
+                            <span class="text-xs text-azulMedio font-semibold animate-pulse">Click to flip</span>
+                        </div>
+                        <div class="w-full h-44 rounded-xl overflow-hidden mb-3 relative group">
+                            <img src="proyecto 2.jpg" alt="CREO" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <p class="font-bold text-azulOscuro text-center text-base">CREO</p>
+                        <span class="ver-mas mt-2 text-xs font-semibold text-azulMedio text-center block transition-colors duration-300 hover:text-azulOscuro">Click →</span>
+                    </div>
+
+                    <!-- REVERSO -->
+                    <div class="flip-card-back bg-gradient-to-br from-azulOscuro to-azulMedio text-white p-6 flex flex-col justify-between h-full overflow-y-auto">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-azulClaro tracking-wide">CREO</h4>
+                            <p class="text-xs sm:text-sm leading-relaxed text-slate-100">
+                                This project was a weekly course that lasted several months, during which we learned about
+                                community, civics, and leadership. Beyond the theory, it inspired us to become young leaders
+                                with initiative who are capable of bringing about positive change.
+
+                                Thanks to the practical and motivating activities, I strengthened my knowledge of civics,
+                                and we developed a greater commitment to transforming our communities and our country by
+                                acting responsibly and with a vision for the future.
+                            </p>
+                        </div>
+                        <span class="ver-mas text-xs text-azulClaro hover:text-white mt-3 text-center transition-transform duration-300 hover:scale-105">Click →</span>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- PROYECTO 04 -->
+            <article
+                class="flip-card rounded-2xl shadow-2xl overflow-hidden bg-white border border-white/40 h-[380px] transition-transform duration-300 hover:-translate-y-1"
+                tabindex="0"
+                role="button"
+                aria-pressed="false"
+                aria-label="Ver detalles de Plant Bud"
+                onclick="toggleCard(this)"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}"
+            >
+                <div class="flip-card-inner relative w-full h-full">
+
+                    <!-- FRENTE -->
+                    <div class="flip-card-front bg-white flex flex-col justify-between h-full p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="numero-proyecto font-bold text-azulOscuro text-lg bg-fondoClaro px-3 py-1 rounded-lg shadow-sm">04</span>
+                            <span class="text-xs text-azulMedio font-semibold animate-pulse">Click to flip</span>
+                        </div>
+                        <div class="w-full h-44 rounded-xl overflow-hidden mb-3 relative group">
+                            <img src="proyecto 3.jpg" alt="Plant Bud" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <p class="font-bold text-azulOscuro text-center text-base">Plant Bud</p>
+                        <span class="ver-mas mt-2 text-xs font-semibold text-azulMedio text-center block transition-colors duration-300 hover:text-azulOscuro">Click to learn more →</span>
+                    </div>
+
+                    <!-- REVERSO -->
+                    <div class="flip-card-back bg-gradient-to-br from-azulOscuro to-azulMedio text-white p-6 flex flex-col justify-between h-full overflow-y-auto">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-azulClaro tracking-wide">Plant Bud</h4>
+                            <p class="text-xs sm:text-sm leading-relaxed text-slate-100">
+                                In 2025, I participated in a project to create a website about plant care, where I worked as
+                                a project manager and on the design side. During that time, I developed leadership and
+                                teamwork skills, and I also discovered a new interest in design thanks to the training I
+                                received.
+
+                                In 2026, I continued to contribute to the project’s resources and design, presenting the
+                                project and carrying out a rebranding of the color scheme and logo. All of this effort led
+                                us to develop a web app that made it to EXPO TECH and Shark Tank, representing our center
+                                alongside six others from El Salvador. This tool not only taught users about plants but also
+                                allowed them to view gardens in 3D and offered features that enriched the user experience.
+                            </p>
+                        </div>
+                        <span class="ver-mas text-xs text-azulClaro hover:text-white mt-3 text-center transition-transform duration-300 hover:scale-105">Click →</span>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- PROYECTO 05 -->
+            <article
+                class="flip-card rounded-2xl shadow-2xl overflow-hidden bg-white border border-white/40 h-[380px] transition-transform duration-300 hover:-translate-y-1"
+                tabindex="0"
+                role="button"
+                aria-pressed="false"
+                aria-label="Ver detalles de Servicio y Atención en Protocolo"
+                onclick="toggleCard(this)"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}"
+            >
+                <div class="flip-card-inner relative w-full h-full">
+
+                    <!-- FRENTE -->
+                    <div class="flip-card-front bg-white flex flex-col justify-between h-full p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="numero-proyecto font-bold text-azulOscuro text-lg bg-fondoClaro px-3 py-1 rounded-lg shadow-sm">05</span>
+                            <span class="text-xs text-azulMedio font-semibold animate-pulse">Click to flip</span>
+                        </div>
+                        <div class="w-full h-44 rounded-xl overflow-hidden mb-3 relative group">
+                            <img
+                                src="proyecto 4.png"
+                                alt="Servicio y Atención en Protocolo"
+                                loading="lazy"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            >
+                        </div>
+                        <p class="font-bold text-azulOscuro text-center text-base">Servicio y Atención en Protocolo</p>
+                        <span class="ver-mas mt-2 text-xs font-semibold text-azulMedio text-center block transition-colors duration-300 hover:text-azulOscuro">Click →</span>
+                    </div>
+
+                    <!-- REVERSO -->
+                    <div class="flip-card-back bg-gradient-to-br from-azulOscuro to-azulMedio text-white p-6 flex flex-col justify-between h-full overflow-y-auto">
+                        <div>
+                            <span class="etiqueta-proyecto inline-block bg-white/20 text-azulClaro text-[10px] font-bold px-2 py-0.5 rounded mb-2 backdrop-blur-sm">COMMUNITY SERVICE</span>
+                            <h4 class="font-bold text-lg mb-2 text-azulClaro tracking-wide">Servicio y Atención en Protocolo</h4>
+                            <p class="text-xs sm:text-sm leading-relaxed text-slate-100">
+                                This project was a requirement of the school for us to graduate. It lasted two years, and I
+                                had to complete 150 hours.
+
+                                During this time, I had the opportunity to serve not only my school but also various people
+                                who visited the institution. My duties ranged from cleaning and maintaining the facilities
+                                to assisting and supporting each person with their individual needs.
+
+                                Thanks to this experience, I developed important skills such as active listening, teamwork,
+                                and a spirit of service—qualities that helped me grow both personally and professionally.
+                            </p>
+                        </div>
+                        <span class="ver-mas text-xs text-azulClaro hover:text-white mt-3 text-center transition-transform duration-300 hover:scale-105">Click →</span>
+                    </div>
+
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- FUNCIÓN PARA GIRAR LAS TARJETAS -->
+    <script>
+        function toggleCard(card) {
+            card.classList.toggle('flipped');
+
+            card.setAttribute(
+                'aria-pressed',
+                card.classList.contains('flipped')
+            );
+        }
+    </script>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+        <h3>My contact info:</h3>
+
+        <div class="redes-sociales">
+            <div class="red-item transition-all duration-300 hover:-translate-y-1">@abril_riv36</div>
+            <div class="red-item transition-all duration-300 hover:-translate-y-1">6960-5438</div>
+            <div class="red-item transition-all duration-300 hover:-translate-y-1">br985716@gmail.com</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

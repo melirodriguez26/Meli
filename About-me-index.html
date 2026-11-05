@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melissa Rodríguez - About me</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Paleta de colores del portafolio -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azulOscuro: '#1C3D5A',
+                        azulMedio: '#4A79A9',
+                        azulClaro: '#BDCEDD',
+                        fondoClaro: '#F2F4F7'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        pulseSlow: {
+                            '0%, 100%': { opacity: '0.2' },
+                            '50%': { opacity: '0.4' },
+                        }
+                    },
+                    animation: {
+                        float: 'float 4s ease-in-out infinite',
+                        pulseSlow: 'pulseSlow 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <div class="logo">
+            Melissa Rodríguez
+        </div>
+
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <nav aria-label="Navegación principal" class="navegacion">
+            <a href="About-me-index.html" class="activo">About me</a>
+            <a href="Projects-index.html">Projects</a>
+            <a href="C&R-index.html">Recognitions &amp; Certificates</a>
+            <a href="contact-index.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal mx-auto my-auto py-10">
+
+        <!-- TÍTULOS DE PRESENTACIÓN CON ANIMACIÓN DE ENTRADA -->
+        <section class="presentacion text-center mb-8 transition-all duration-700 hover:scale-[1.01]">
+            <h1 class="subtitulo-saludo">
+                Hi, I'm Melissa Rodríguez
+            </h1>
+            <h2 class="titulo-seccion">
+                High School Graduate
+            </h2>
+        </section>
+
+        <!-- TARJETA PRINCIPAL ESTILO SPLIT CON MOVIMIENTO Y SOMBRAS DINÁMICAS -->
+        <section class="tarjeta-sobre-mi-split overflow-hidden bg-white rounded-3xl shadow-2xl grid grid-cols-1 lg:grid-cols-12 border border-white/50 items-center transition-all duration-500 hover:shadow-[0_25px_60px_-15px_rgba(28,61,90,0.3)]">
+
+            <!-- COLUMNA IZQUIERDA: FOTO EN TAMAÑO IDEAL CON EFECTO FLOTANTE -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-azulOscuro via-azulMedio to-azulOscuro p-8 lg:p-12 flex flex-col items-center justify-center text-white relative overflow-hidden">
+                <!-- Círculos decorativos de fondo con animación de pulso lento -->
+                <div class="absolute -top-16 -left-16 w-48 h-48 bg-azulClaro/30 rounded-full blur-2xl pointer-events-none animate-pulseSlow"></div>
+                <div class="absolute -bottom-16 -right-16 w-56 h-56 bg-azulOscuro/60 rounded-full blur-3xl pointer-events-none animate-pulseSlow" style="animation-delay: 3s;"></div>
+
+                <!-- FOTOGRAFÍA DE PERFIL CON ANIMACIÓN FLOTANTE -->
+                <div class="relative z-10 flex flex-col items-center my-4 animate-float">
+                    <div class="marco-foto w-44 h-56 sm:w-48 sm:h-60 p-1.5 rounded-2xl bg-white/10 backdrop-blur-md shadow-2xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-azulClaro/50">
+                        <img src="Imagen perfil Meli.jpeg" alt="Foto de Melissa Rodríguez" class="w-full h-full object-cover rounded-xl transition-transform duration-700 hover:scale-110">
+                    </div>
+                    <p class="texto-foto text-azulClaro text-xs sm:text-sm mt-3 font-medium tracking-wide drop-shadow-md">
+                        High School Graduate
+                    </p>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA: PROFILE Y SKILLS CON MICRO-INTERACCIONES -->
+            <div class="lg:col-span-7 p-8 lg:p-10 flex flex-col justify-center bg-white text-gray-800">
+                
+                <!-- BLOQUE PROFILE -->
+                <div class="mb-8 transition-transform duration-300 hover:translate-x-1">
+                    <span class="etiqueta inline-block bg-fondoClaro text-azulOscuro text-xs font-bold px-3 py-1 rounded-lg mb-3 w-fit shadow-sm transition-transform duration-300 hover:scale-105">
+                        ABOUT ME
+                    </span>
+                    <h3 class="text-2xl lg:text-3xl font-bold text-azulOscuro mb-4 tracking-tight">Profile</h3>
+                    <p class="text-gray-600 text-sm lg:text-base leading-relaxed">
+                        I graduated with a General High School Diploma from Walter A. Soundy School in El Salvador, where I focused on solidifying my knowledge of main subjects. Additionally, I completed a three-year scholarship program at the ¡Supérate! Center (Poma Foundation); through this program, I developed my skills, earned certifications in English and IT, and learned values that now define me as a person.
+                    </p>
+                </div>
+
+                <!-- BLOQUE SKILLS CON EFECTO DE DESPLAZAMIENTO SUAVE -->
+                <div class="transition-transform duration-300 hover:translate-x-1">
+                    <span class="inline-block bg-fondoClaro text-azulOscuro text-xs font-bold px-3 py-1 rounded-lg mb-2 w-fit shadow-sm transition-transform duration-300 hover:scale-105">
+                        SKILLS & EXPERTISE
+                    </span>
+                    <h3 class="text-xl font-bold text-azulOscuro mb-3 tracking-tight">Skills</h3>
+
+                    <ul class="lista-habilidades grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <li class="bg-fondoClaro hover:bg-azulOscuro hover:text-white text-azulOscuro border border-azulClaro/40 p-3 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out flex items-center shadow-sm hover:shadow-md hover:-translate-y-1">
+                            <span class="w-2 h-2 rounded-full bg-azulMedio mr-2.5 transition-colors duration-300 group-hover:bg-azulClaro"></span> Assertive communication
+                        </li>
+                        <li class="bg-fondoClaro hover:bg-azulOscuro hover:text-white text-azulOscuro border border-azulClaro/40 p-3 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out flex items-center shadow-sm hover:shadow-md hover:-translate-y-1">
+                            <span class="w-2 h-2 rounded-full bg-azulMedio mr-2.5 transition-colors duration-300"></span> Teamwork and leadership
+                        </li>
+                        <li class="bg-fondoClaro hover:bg-azulOscuro hover:text-white text-azulOscuro border border-azulClaro/40 p-3 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out flex items-center shadow-sm hover:shadow-md hover:-translate-y-1">
+                            <span class="w-2 h-2 rounded-full bg-azulMedio mr-2.5 transition-colors duration-300"></span> Critical thinking
+                        </li>
+                        <li class="bg-fondoClaro hover:bg-azulOscuro hover:text-white text-azulOscuro border border-azulClaro/40 p-3 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 ease-in-out flex items-center shadow-sm hover:shadow-md hover:-translate-y-1">
+                            <span class="w-2 h-2 rounded-full bg-azulMedio mr-2.5 transition-colors duration-300"></span> English language proficiency
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+        <h3>My contact info:</h3>
+        <div class="redes-sociales">
+            <div class="red-item">@abril_riv36</div>
+            <div class="red-item">6960-5438</div>
+            <div class="red-item">br985716@gmail.com</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
