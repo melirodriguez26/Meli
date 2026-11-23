@@ -1138,7 +1138,6 @@ body::after {
     color: var(--white);
     text-align: center;
     padding: 40px 20px;
-    margin-top: 60px;
     font-size: 13.5px;
     letter-spacing: 0.5px;
     border-top: none;
